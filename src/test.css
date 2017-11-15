@@ -55,9 +55,7 @@ body{
 	
 	text-align: center;
 	background-color: #f1f1f1;
-}
-
-/*SIDA 1*/	
+}	
 #wrapper {
 	
 	width: 360px;
@@ -76,72 +74,5 @@ body{
 	height: 160px;
 	background-color: blue;
 }
-#button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
+	
 
-    text-decoration: none;
-    color: initial;
-}
-
-/*SIDA 2*/	
-#wrapper2 {
-	
-	width: 360px;
-	display: block;
-	margin: 0 auto;
-	height: 660px;
-	background-color: red;
-
-	
-}
-
-#all {
-	width: 360px;
-	height: 500px;
-	background-color: blue;
-	
-}
-
-
-
-#button2 {
-	
-	width: 80px;
-	height: 80px;
-	margin: 0 auto;
-	display: inline-block;
-	
-}
-
-#pics1 {
-	
-	width: 100px;
-	height: 360px;
-	background-color: yellow;
-	display: block;
-	float: left;
-	
-}
-
-#pics2 {
-	
-	width: 100px;
-	height: 360px;
-	background-color: yellow;
-	display: block;
-	
-	
-}
-
-#pics3 {
-	
-	width: 100px;
-	height: 360px;
-	background-color: yellow;
-	display: block;
-	float: right;
-	
-	
-}
