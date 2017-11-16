@@ -8,14 +8,15 @@ import {
 } from 'react-router-dom'
 
 const Home = () => (
-  <div>
+  <div id="home">
 		<div id="wrapper"> 
-			<p>MASSA INFO</p>
+			<p>TEA APP</p>
 			
 		</div>
 
 		<div id="wrapperlow">
-			<p>LÅG INFO</p>
+    <p> </p>
+			
 			<Link id="button" to="mood">Mood</Link>
 			
 		</div>
@@ -24,14 +25,67 @@ const Home = () => (
 )
 
 const mood = () => (
-  <div>
+  <div id="home">
 		<div id="wrapper2"> 
-			<p>MASSA INFO</p>
+			<p>Pick a mood</p>
 				
-			<Link id="button" to="Home">Home</Link>
 			
-		</div>
+      <div id="allmoods">
+          <div id="firstcol">
+              <button id="button1" name="mood" type ="submit" value="happy"> Hej </button>
+              <button id="button1" name="mood" type ="submit" value="happy"> Hej </button>
+              <button id="button1" name="mood" type ="submit" value="happy"> Hej </button>
+			
+		      </div>
+          <div id="secondcol">
+              <button id="button1" name="mood" type ="submit" value="happy"> Hej </button>
+              <button id="button1" name="mood" type ="submit" value="happy"> Hej </button>
+              <button id="button1" name="mood" type ="submit" value="happy"> Hej </button>
+      
+          </div>
+          <div id="thirdcol">
+              <button id="button1" name="mood" type ="submit" value="happy"> Hej </button>
+              <button id="button1" name="mood" type ="submit" value="happy"> Hej </button>
+              <button id="button1" name="mood" type ="submit" value="happy"> Hej </button>
+      
+          </div>
+    
+
+    </div>
+    <div id="navigator">
+        <div id="forward">
+              <Link id="button" to="info">Forward</Link>
+      
+          </div>
+          <div id="backward">
+              <Link id="button" to="Home">Backward</Link>
+      
+          </div>
+    </div>
+    </div>
 	
+  </div>
+)
+
+const info = () => (
+  <div id="home">
+    <div id="wrapper2"> 
+      <p>INFO</p>
+      
+    
+
+    <div id="infotext">
+
+    </div>
+      
+      <div id="navigator">
+          <div id="backward">
+              <Link id="button" to="mood">Backward</Link>
+      
+          </div>
+      </div>
+    </div>
+  
   </div>
 )
 
@@ -54,7 +108,7 @@ class App extends Component {
 
       <Route exact path="/home" component={Home}/>
 	   <Route exact path="/mood" component={mood}/>
-      
+      <Route exact path="/info" component={info}/>
     </div>
   </Router>
    

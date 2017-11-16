@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+
 }
 ol, ul {
 	list-style: none;
@@ -54,17 +55,26 @@ table {
 body{
 	
 	text-align: center;
-	background-color: #f1f1f1;
+	
+	/*background-color: #f1f1f1;*/
 }
 
 /*SIDA 1*/	
+#home {
+	width: 360px;
+	height: 660px;
+	margin: 0 auto;
+	display: block;
+	background-image: url("/background.png");
+}
+
 #wrapper {
 	
 	width: 360px;
 	display: block;
 	margin: 0 auto;
 	height: 500px;
-	background-color: red;
+	background-image: url("/background.png");
 	
 }
 
@@ -74,7 +84,7 @@ body{
 	display: block;
 	margin: 0 auto;
 	height: 160px;
-	background-color: blue;
+	
 }
 #button {
     -webkit-appearance: button;
@@ -83,7 +93,20 @@ body{
 
     text-decoration: none;
     color: initial;
+  }  
+
+#button1 {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+    margin-top: 80px;
+    padding-right: 50px;
+    
 }
+
 
 /*SIDA 2*/	
 #wrapper2 {
@@ -92,7 +115,7 @@ body{
 	display: block;
 	margin: 0 auto;
 	height: 660px;
-	background-color: red;
+	background-color: ;
 
 	
 }
@@ -104,8 +127,47 @@ body{
 	
 }
 
+#allmoods{
+	width: 360px;
+	height: 500px;
+	background-color: blue;
 
+}
 
+#firstcol{
+	height: 500px;
+	width: 120px;
+	background-color: pink;
+	float: left;
+
+}
+#secondcol{
+	height: 500px;
+	width: 120px;
+	background-color: purple;
+	float: left;
+
+}
+
+#thirdcol{
+	height: 500px;
+	width: 120px;
+	background-color: magenta;
+	float: left;
+
+}
+
+#forward{
+	width: 180px;
+	float: left;
+	margin-top: 50px;
+}
+
+#backward{
+	width: 180px;
+	float: right;
+	margin-top: 50px;
+}
 #button2 {
 	
 	width: 80px;
@@ -144,4 +206,14 @@ body{
 	float: right;
 	
 	
+}
+
+/*SIDA 3*/
+
+#infotext{
+	width: 360px;
+	height: 220px;
+	margin-top: 100px;
+	background-color: pink;
+
 }
