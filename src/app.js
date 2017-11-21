@@ -10,15 +10,22 @@ import {
 const Home = () => (
   <div id="home">
 		<div id="wrapper"> 
-			<p>TEA APP</p>
-			
-		</div>
+    <div id="wrappertop">
+       <div id= "infobox">i</div>
+    </div>
+			<h1>TEA APP</h1>
+      <img id="logo" src={require('./Logo.png')} />
+		  <div id="introtext">
+        <h2>What tea mood are you in? We'll help you find just the perfect tea for you!</h2>
+      </div>
+    </div>
 
 		<div id="wrapperlow">
     <p> </p>
-			
-			<Link id="button" to="mood">Mood</Link>
-			
+			<div id="button">
+			   <Link id="StartLink" to="mood"> Start</Link>
+			</div>
+      
 		</div>
 	
   </div>
@@ -54,11 +61,13 @@ const mood = () => (
     </div>
     <div id="navigator">
         <div id="forward">
-              <Link id="button" to="info">Forward</Link>
+              <Link id="button" to="Home">Backward 
+
+              </Link>
       
           </div>
           <div id="backward">
-              <Link id="button" to="Home">Backward</Link>
+              <Link id="button" to="info">Forward</Link>
       
           </div>
     </div>
