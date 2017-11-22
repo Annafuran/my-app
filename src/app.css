@@ -218,14 +218,14 @@ h2{
 
 }
 
-#forward{
+#backward{
 	width: 180px;
 	float: left;
 	margin-top: 50px;
 	font-family: 'entypo', sans-serif;
 }
 
-#backward{
+#forward{
 	width: 180px;
 	float: right;
 	margin-top: 50px;
@@ -269,6 +269,10 @@ h2{
 	float: right;
 	
 	
+}
+
+#demo{
+	size: 100px;
 }
 
 /*SIDA 3*/
