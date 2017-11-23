@@ -6,6 +6,7 @@
 /* IMPORT FONTS */
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
 
 
 
@@ -137,15 +138,30 @@ h2{
 }
 
 #button1 {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
+    background-color: rgba(255, 255,255, 0.7);
     text-decoration: none;
     color: initial;
-    margin-top: 80px;
-    padding-right: 50px;
-    
+    margin-bottom: 80px;
+    padding-right: ;
+    border: none;
+    align-self: center;
+    width: 100px;
+    height: 50px;
+    box-shadow: 0px 2px 10px 2px #8a6d86;
+    font-family: ;
+
+}
+#button1 h3{
+	font-family: 'Poiret One', cursive;
+	margin-top: 15px;
+	letter-spacing: 1px;
+	font-size: 20px;
+	font-weight: ;
+}
+
+
+#button1:focus {
+	background-color:white ; 
 }
 
 #infobox{
@@ -158,7 +174,7 @@ h2{
 	border-radius: 50%;
 	opacity:0.5;
 	margin:1% 1% 1% 1%;
-	box-shadow: 0px 2px 10px 3px #8a6d86;
+	box-shadow: 0px 2px 5px 2px #8a6d86;
 	float:right;
 	
 }
@@ -180,40 +196,42 @@ h2{
 
 	
 }
-
+#wrapper2 h2 {
+	padding-top: 30px;
+}
 #all {
 	width: 360px;
 	height: 500px;
-	background-color: blue;
+	background-color: ;
 	
 }
 
 #allmoods{
 	width: 360px;
-	height: 500px;
-	background-color: blue;
+	height: 400px;
+	background-color: ;
+	margin-top: 50px;
 
 }
 
 #firstcol{
-	height: 500px;
+	height: 400px;
 	width: 120px;
-	background-color: pink;
+	background-color:  ;
 	float: left;
-
 }
 #secondcol{
-	height: 500px;
+	height: 400px;
 	width: 120px;
-	background-color: purple;
+	background-color: ;
 	float: left;
 
 }
 
 #thirdcol{
-	height: 500px;
+	height: 400px;
 	width: 120px;
-	background-color: magenta;
+	background-color:  ;
 	float: left;
 
 }
@@ -221,14 +239,14 @@ h2{
 #backward{
 	width: 180px;
 	float: left;
-	margin-top: 50px;
+	margin-top: 10px;
 	font-family: 'entypo', sans-serif;
 }
 
 #forward{
 	width: 180px;
 	float: right;
-	margin-top: 50px;
+	margin-top: 10px;
 	font-family: 'entypo', sans-serif;
 }
 #button2 {
@@ -275,12 +293,27 @@ h2{
 	size: 100px;
 }
 
-/*SIDA 3*/
+/*SIDA 3 - moods*/
 
-#infotext{
-	width: 360px;
-	height: 220px;
-	margin-top: 100px;
-	background-color: pink;
+#wrapper3 h1 {
+	font-size: 30px;
 
 }
+#wrapper3 h2{
+
+}
+#wrapper3 #logo{
+	height:100%;
+	width:60%;
+	margin-top:2px;
+}
+
+#wrapper3 #introtext{
+	background-color: ;
+	margin-top: -20px;
+}
+#introtext h2 {
+	font-size:20px;
+	line-height: 20px;
+}
+
