@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+//import ReactDom from 'react-dom';
+import Popup from 'react-popup';
 //import types from './types.json';
 import './app.css';
 import {
@@ -7,13 +9,39 @@ import {
   Link
 } from 'react-router-dom'
 
+
+
+let mySpecialPopup = Popup.register({
+    content: 'Här ska det komma informationHär ska det komma informationHär ska det komma informationHär ska det komma informationHär ska det komma information',
+    buttons: {
+        right: ['ok'
+		]
+    }
+});
+
+function Poppis() {
+	
+	Popup.queue(mySpecialPopup)
+	
+}
+
+
+
+
 const Home = () => (
   <div id="home">
 		<div id="wrapper"> 
     <div id="wrappertop">
-       <div id= "infobox">i</div>
+       <div id= "infobox" onClick = {Poppis}>i
+
+	   
+	   </div>
+	   
     </div>
 			<h1>TEA APP</h1>
+			
+			
+
       <img id="logo" src={require('./Logo.png')} />
 		  <div id="introtext">
         <h2>What tea mood are you in? We'll help you find just the perfect tea for you!</h2>
@@ -22,13 +50,17 @@ const Home = () => (
 
 		<div id="wrapperlow">
     <p> </p>
-			<div id="button">
-			   <Link id="StartLink" to="mood"> Start</Link>
+			<div id="button" >
+			  <Link id="StartLink" to="mood"> Start</Link>
+			
+			
 			</div>
+			
       
 		</div>
   </div>
 )
+
 
 
 class mood extends Component {
@@ -46,9 +78,10 @@ class mood extends Component {
 	
 	knapp(ngt){
 		
+		
 		console.log("Hello " + ngt);
 		this.setState({ mood: ngt });
-		
+	
 		// {this.knapp.bind(this)}
 	}
 	
@@ -59,10 +92,12 @@ class mood extends Component {
 		return(
 			
 			<div id="home">
-				<div id="wrapper2"> 
-					<h2>How are you feeling right now? Pick a mood below</h2>
-			
-
+				<div id="wrappertop">
+					<div id= "infobox" onClick = {Poppis}>i</div>
+				</div>
+					<div id="wrapper2"> 
+					
+						<h2>How are you feeling right now? Pick a mood below</h2>	
 			
 			  <div id="allmoods">
 			
@@ -94,9 +129,11 @@ class mood extends Component {
 			
 			<div id="navigator">
 				<div id="forward">	
-					<Link id="button" to={{
+					<Link id="button" to={
+						{
 						pathname: '/tea',
 						mood: this.state.mood,
+						
 						
 					}}>Forward</Link>             
 				  </div>
@@ -422,19 +459,25 @@ class Tea extends Component {
 			
 		}
 		
-		return (
-		
+		return (		
 		<div> This webpage is broken </div>
-		);
-		
-	
-		
-		
+		);		
 	}
 }
 
-
 class App extends Component {
+	
+	 constructor() {
+    super();
+    this.state = {
+      showPopup: false
+    };
+  }
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
 	
   render() {
 
@@ -450,7 +493,7 @@ class App extends Component {
   <Router>
     <div>
       <hr/>
-
+		<Popup className = "mm-popup" />
       <Route exact path="/home" component={Home}/>
 	   <Route exact path="/mood" component={mood}/>
       <Route exact path="/info" component={info}/>
