@@ -70,17 +70,25 @@ class mood extends Component {
 		
 		this.state = {
 			
-			mood : ""
+			mood : "nothing"
 			
 		};
 		
 	}
 	
 	knapp(ngt){
+		if (ngt == "")
+		{
+			console.log("nope");
+		}
+		else
+		{
+			console.log("Hello " + ngt);
+			this.setState({ mood: ngt });
+			
+			
+		}
 		
-		
-		console.log("Hello " + ngt);
-		this.setState({ mood: ngt });
 	
 		// {this.knapp.bind(this)}
 	}
@@ -110,7 +118,7 @@ class mood extends Component {
 				  <div id="secondcol">
 					  <button id="button1" name="mood" type ="submit" value="festive" onClick={ () => this.knapp("festive") }><h3>FESTIVE</h3> </button>
 					  <button id="button1" name="mood" type ="submit" value="angry" onClick={ () => this.knapp("angry") }><h3>ANGRY</h3> </button>
-					  <button id="button1" name="mood" type ="submit" value="sweet" onClick={ () => this.knapp("sweet") }><h3>SWEET</h3></button>
+					  <button id="button1" name="mood" type ="submit" value="sweet" onClick={ () => this.knapp("sweet") }><h3>SWEETISH</h3></button>
 			  
 				  </div>
 				  <div id="thirdcol">
@@ -128,14 +136,24 @@ class mood extends Component {
 
 			
 			<div id="navigator">
-				<div id="forward">	
+				<div id="forward">
+					
 					<Link id="button" to={
 						{
 						pathname: '/tea',
 						mood: this.state.mood,
 						
-						
-					}}>Forward</Link>             
+					}} 
+					
+					>Forward</Link>
+					
+				
+					
+					
+
+					
+					
+					
 				  </div>
 				  <div id="backward">
 					  <Link id="button" to="Home">Backward</Link>
@@ -160,7 +178,6 @@ const info = () => (
       <p>INFO</p>
       
     
-
     <div id="infotext">
 
     </div>
@@ -183,7 +200,9 @@ class Tea extends Component {
 		
 		const x = this.props.location.mood;
 		
-		//ANGRY
+	
+		
+		//ANGRY		
 		if(x == "angry"){
 			
 			return(
@@ -195,15 +214,15 @@ class Tea extends Component {
 					<img id="logo" src={require('./Lemon.png')} />
 						<div id="introtext">
 							<h1> Lemon </h1>
-							<h2>If you are feeling angry, orange or lemon tea can boost up your mood and reduce the anger. With its strong and fresh flavour, 
-							not only the taste but the scent itself will calm you down.</h2>
+							<h2>If you are feeling angry, orange or lemon tea can boost up your mood and reduce the anger. 
+							With its strong and fresh flavour, not only will the taste but the scent itself calm you down.</h2>
 						</div>
 				</div>
 
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood">Try again</Link>
+			   <Link id="StartLink" to="mood"> All moods </Link>
 			</div>
       
 				</div>
@@ -237,7 +256,7 @@ class Tea extends Component {
 				<div id="wrapperlow">
 					<p> </p>
 					<div id="button">
-			   			<Link id="StartLink" to="mood">Try again</Link>
+			   			<Link id="StartLink" to="mood"> All moods </Link>
 					</div>
       
 				</div>
@@ -259,15 +278,16 @@ class Tea extends Component {
 					<img id="logo" src={require('./Camomille.png')} />
 					<div id="introtext">
 						<h1> Chamomile tea</h1>
-						<h2>Chamomile tea is one of the best teas to drink when you are feeling stressed and anxious. It is naturally caffeine-free and has a mild and 
-						slightly sweet taste which fit very well when you want to calm yourself.</h2>
+						<h2>Chamomile tea is one of the best teas to drink when you are feeling stressed and anxious. 
+						It is naturally caffeine-free and has a mild and slightly sweet 
+						taste which fit very well when you want to calm yourself down.</h2>
 					</div>
 				</div>
 
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood">Try again</Link>
+			   <Link id="StartLink" to="mood"> All moods </Link>
 			</div>
       
 				</div>
@@ -289,15 +309,16 @@ class Tea extends Component {
 					<img id="logo" src={require('./cinnamon.png')} />
 						<div id="introtext">
 							<h1> Cinnamon </h1>
-							<h2>Christmas is just around the corner and if you want to keep the holiday spirit as high as possible, a cup of cinnamon tea can help 
-							you with that. Not only does the flavour give you a warm and joyful feeling but the scent itself gives you that holiday feeling.</h2>
+							<h2>Christmas has a tendency to bring a very festive feeling to us all. 
+							If you want to keep the holiday spirit as high as possible, a cup of cinnamon tea can help you with that. 
+							Just the scent itself brings you a warm and joyful feeling that reminds you of Christmas.</h2>
 						</div>
 				</div>
 
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood">Try again</Link>
+			   <Link id="StartLink" to="mood"> All moods </Link>
 			</div>
       
 				</div>
@@ -327,7 +348,7 @@ class Tea extends Component {
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood">Try again</Link>
+			   <Link id="StartLink" to="mood"> All moods </Link>
 			</div>
       
 				</div>
@@ -350,14 +371,16 @@ class Tea extends Component {
 					<img id="logo" src={require('./strawBerry.png')} />
 						<div id="introtext">
 							<h1>Berry teas</h1>
-							<h2>If you have the urge for something sweet, a berry-tea can fulfill your need. A berry-tea is sweet both in scent and taste and you can choose between.........</h2>
+							<h2>If you have the urge for something sweet, a berry-tea can fulfill your need. 
+							A berry-tea is sweet both in scent and taste and you can choose between lots of different berry-flavours that will give you the sweetness you are looking for.
+							</h2>
 						</div>
 				</div>
 
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood">Try again</Link>
+			   <Link id="StartLink" to="mood"> All moods </Link>
 			</div>
       
 				</div>
@@ -388,7 +411,7 @@ class Tea extends Component {
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood">Try again</Link>
+			   <Link id="StartLink" to="mood">All moods</Link>
 			</div>
       
 				</div>
@@ -411,14 +434,16 @@ class Tea extends Component {
 					<img id="logo" src={require('./BlackTea.png')} />
 						<div id="introtext">
 							<h1>Black tea</h1>
-							<h2>Black tea contains natural stimulants like caffeine which can help you wake up when you are feeling tired. </h2>
+							<h2>The best tea to drink if you want to give yourself a real boost of energy is black tea. 
+							Black tea contains natural stimulants like caffeine which can help enhance your energy level and allows you to stay awake and alert throughout the day. 
+							</h2>
 						</div>
 				</div>
 
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood">Try again</Link>
+			   <Link id="StartLink" to="mood"> All moods </Link>
 			</div>
       
 				</div>
@@ -442,14 +467,15 @@ class Tea extends Component {
 					<img id="logo" src={require('./GingerTea.png')} />
 						<div id="introtext">
 							<h1> Ginger tea</h1>
-							<h2>Ginger is known for its medicinal effects and therefore drinking ginger tea can help your wellbeing when you are feeling sick</h2>
+							<h2>Ginger is known for its medicinal effects and therefore drinking ginger tea can be a great help when you are not feeling well. 
+							It contains anti-inflammatory properties and provides a feeling of comfort and warmth, which can help boost up your wellbeing.</h2>
 						</div>
 				</div>
 
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood">Try again</Link>
+			   <Link id="StartLink" to="mood">All moods</Link>
 			</div>
       
 				</div>
@@ -460,7 +486,7 @@ class Tea extends Component {
 		}
 		
 		return (		
-		<div> This webpage is broken </div>
+		<div className='disabled'> This webpage is broken </div>
 		);		
 	}
 }

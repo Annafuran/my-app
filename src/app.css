@@ -88,6 +88,13 @@ body{
 	height: 160px;
 }
 
+.disabled {
+	pointer-events: none;
+	opacity: 0.6;
+	cursor: default;
+}
+
+
 #logo{
 	width:80%;
 	margin-top:-50px
@@ -110,11 +117,12 @@ body{
   }  
 
   #StartLink{
-	font-size: 50px;
-	margin-top: -5px;
-	
+	font-size: 40px;
+	/*margin-top: -40px;*/
+	padding-top: 100px;
+	/*border-top: 100px;*/ 
 	font-family: 'Poiret One', cursive;
-	font-weight: 900;
+	font-weight: 700;
 	letter-spacing: 4px;
 	text-decoration: none;
 	color:#4b4b4b;
