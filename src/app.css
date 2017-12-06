@@ -7,7 +7,8 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
-
+@import url('https://fonts.googleapis.com/css?family=Cabin+Condensed|El+Messiri|Muli|Old+Standard+TT|Poppins|Quicksand|Work+Sans');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:300');
 
 
 html, body, div, span, applet, object, iframe,
@@ -58,6 +59,10 @@ table {
 
 /*GENERELLA STILREGLER*/
 
+#arrow{
+	height: 50px; 
+}
+
 body{
 	
 	text-align: center;
@@ -105,7 +110,20 @@ body{
 	width:70%;
 	height:35%;
 	/*padding:10% 30% 10%;*/
-	background-color: #ffffff;
+  }  
+
+#StartLink{
+	font-size: 40px;
+	/*margin-top: -40px;*/
+	padding: 10px;
+	width: 70%;
+	/*border-top: 100px;*/ 
+	font-family: 'Poppins', sans-serif;
+	font-weight: 300;
+	letter-spacing: 4px;
+	text-decoration: none;
+	color:#4b4b4b;
+	
 	box-shadow: 0px 5px 10px 5px #8a6d86;
 	border-radius: 5%;
 	text-decoration: none;
@@ -113,19 +131,6 @@ body{
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
-
-  }  
-
-  #StartLink{
-	font-size: 40px;
-	/*margin-top: -40px;*/
-	padding-top: 100px;
-	/*border-top: 100px;*/ 
-	font-family: 'Poiret One', cursive;
-	font-weight: 700;
-	letter-spacing: 4px;
-	text-decoration: none;
-	color:#4b4b4b;
 	
 
 }
@@ -136,16 +141,41 @@ body{
 }
 h1{
 	font-size: 70px;
-	font-family: 'Poiret One', cursive;
+	font-family: 'El Messiri', sans-serif;
 	color:white;
+	margin-top: 70px;
 }
 h2{
-	font-size: 25px;
-	font-family: 'Poiret One', cursive;
+	font-size: 10px;
+	font-family: 'Alegreya Sans', sans-serif;
 	color:white;
 	margin-top:-7px;
 }
-
+#wrapper2 h2{
+	font-size: 25px;
+	font-family: 'El Messiri', serif;
+	color:white;
+	margin-top:17px;
+	padding-left: 10px;
+}
+#wrapper3 h1{
+	font-size: 70px;
+	font-family: 'El Messiri', sans-serif;
+	color:white;
+	margin-top: 50px;
+	
+}
+#wrapper3 h3{
+	font-size: 40px;
+	font-family: 'El Messiri', sans-serif;
+	color:white;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	color: #4b4b4b;
+	
+}	
+	
+	
 #button1 {
     background-color: rgba(255, 255,255, 0.7);
     text-decoration: none;
@@ -185,6 +215,8 @@ h2{
 	margin:1% 1% 1% 1%;
 	box-shadow: 0px 2px 5px 2px #8a6d86;
 	float:right;
+	margin-top: 20px;
+	margin-right: 20px;
 	
 }
 
@@ -254,14 +286,14 @@ h2{
 #backward{
 	width: 180px;
 	float: left;
-	margin-top: 10px;
+	margin-top: -30px;
 	font-family: 'entypo', sans-serif;
 }
 
 #forward{
 	width: 180px;
 	float: right;
-	margin-top: 10px;
+	margin-top:-30px;
 	font-family: 'entypo', sans-serif;
 }
 #button2 {
@@ -315,7 +347,7 @@ h2{
 
 }
 #wrapper3 h2{
-
+	
 }
 #wrapper3 #logo{
 	height:100%;
@@ -332,6 +364,11 @@ h2{
 	line-height: 20px;
 }
 
+#backtomoods{
+	width:70%;
+	height:70%;
+	width: 50px;
+}
 /*INFORUTAN*/
 
 .mm-popup--visible{
@@ -339,12 +376,14 @@ h2{
 	background-color: white;
 	display: inline-block;
 	width: 250px;
-	height: 200px;
+	height: 280px;
+	font-family: 'Alegreya Sans', sans-serif;
 	margin-top: 100px;
-	margin-left: -120px;
+	margin-left: -135px;
 	position: absolute;
 	box-shadow: 10px 10px 300px 30px rgba(0,0,0,0.75);
 	border-radius: 5px;
+	padding: 10px;
 	
 }
 
@@ -354,6 +393,7 @@ h2{
 }
 .mm-popup__btn{
 	padding: 5px;
+	margin-top: 20px;
 	
 }
 

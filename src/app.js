@@ -12,11 +12,19 @@ import {
 
 
 let mySpecialPopup = Popup.register({
-    content: 'Här ska det komma informationHär ska det komma informationHär ska det komma informationHär ska det komma informationHär ska det komma information',
-    buttons: {
+    content: <div> Welcome to tea app!
+	<p>This tea-app will give a tea recommendetion depending on your current mood.</p>
+	Press start to get started, this will take you to the mood page. 
+	There you simply click on the mood that youre currently in. 
+	By clicking on the "right arrow"-button a tea-recommendetion that suits your mood will be displayed.
+    </div>,
+	
+	className: 'pop_up',
+	buttons: {
         right: ['ok'
 		]
     }
+	
 });
 
 function Poppis() {
@@ -50,8 +58,8 @@ const Home = () => (
 
 		<div id="wrapperlow">
     <p> </p>
-			<div id="button" >
-			  <Link id="StartLink" to="mood"> Start</Link>
+			<div>
+			  <Link id="StartLink" to="mood"> START </Link>
 			
 			
 			</div>
@@ -70,7 +78,7 @@ class mood extends Component {
 		
 		this.state = {
 			
-			mood : "nothing"
+			mood : null
 			
 		};
 		
@@ -94,18 +102,46 @@ class mood extends Component {
 	}
 	
 	render() {
+		let linkContent = null; 
 		
 		// här kan man skapa variabler/konstanter
+		if(this.state.mood != null)
+		{
+			linkContent = ( <div id="forward">
+			<Link to={
+			{
+			pathname: '/tea',
+			mood: this.state.mood,
+			
+			}}
+			><img id="arrow" src={require('./arrowright.png')} /></Link> 
+		
+			</div>)
+			}
+		else { 
+			linkContent = ( 
+			
+			<div id="forward" className = "disabled"> 
+			<Link to={{}}
+			>
+			
+			<img id="arrow" src={require('./arrowright.png')} /></Link> 
+			
+			</div>)
+		
+		}
+		
 		
 		return(
 			
 			<div id="home">
 				<div id="wrappertop">
+
 					<div id= "infobox" onClick = {Poppis}>i</div>
 				</div>
 					<div id="wrapper2"> 
-					
-						<h2>How are you feeling right now? Pick a mood below</h2>	
+						
+						<h2>How are you feeling right now? Pick one mood below</h2>	
 			
 			  <div id="allmoods">
 			
@@ -136,27 +172,9 @@ class mood extends Component {
 
 			
 			<div id="navigator">
-				<div id="forward">
-					
-					<Link id="button" to={
-						{
-						pathname: '/tea',
-						mood: this.state.mood,
-						
-					}} 
-					
-					>Forward</Link>
-					
-				
-					
-					
-
-					
-					
-					
-				  </div>
+			{linkContent}
 				  <div id="backward">
-					  <Link id="button" to="Home">Backward</Link>
+					  <Link id="button" to="Home"><img id="arrow" src={require('./arrowleft.png')} /></Link>
 			  
 				  </div>
 			</div>
@@ -210,10 +228,10 @@ class Tea extends Component {
 				<div id="wrapper3"> 
 				<div id="wrappertop">
 				</div>
-					<h1>The perfect tea for you</h1>
+					<h1>The perfect tea for you is</h1>
 					<img id="logo" src={require('./Lemon.png')} />
 						<div id="introtext">
-							<h1> Lemon </h1>
+							<h3> Lemon </h3>
 							<h2>If you are feeling angry, orange or lemon tea can boost up your mood and reduce the anger. 
 							With its strong and fresh flavour, not only will the taste but the scent itself calm you down.</h2>
 						</div>
@@ -222,7 +240,8 @@ class Tea extends Component {
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood"> All moods </Link>
+			   <Link id="backtomoods" to="mood"> <img id="arrow" src={require('./arrowleft.png')} /> </Link>
+			   
 			</div>
       
 				</div>
@@ -246,7 +265,7 @@ class Tea extends Component {
 							<img id="logo" src={require('./Chai.png')} />
 						
 						<div id="introtext">
-							<h1> Chai Tea</h1>
+							<h3> Chai Tea</h3>
 							<h2>Happy is a feeling you don't want to chase away but rather a feeling you want to maintain for as long as you can. 
 							Chai tea is flavoured with a blend of spices that will warm you up inside and out. It will keep you happy or even uplift your joyful feeling. 
 </h2>
@@ -256,7 +275,7 @@ class Tea extends Component {
 				<div id="wrapperlow">
 					<p> </p>
 					<div id="button">
-			   			<Link id="StartLink" to="mood"> All moods </Link>
+			   			<Link id="backtomoods" to="mood"> <img id="arrow" src={require('./arrowleft.png')} /> </Link>
 					</div>
       
 				</div>
@@ -277,7 +296,7 @@ class Tea extends Component {
 					<h1>The perfect tea for you is</h1>
 					<img id="logo" src={require('./Camomille.png')} />
 					<div id="introtext">
-						<h1> Chamomile tea</h1>
+						<h3> Chamomile tea</h3>
 						<h2>Chamomile tea is one of the best teas to drink when you are feeling stressed and anxious. 
 						It is naturally caffeine-free and has a mild and slightly sweet 
 						taste which fit very well when you want to calm yourself down.</h2>
@@ -287,7 +306,7 @@ class Tea extends Component {
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood"> All moods </Link>
+			   <Link id="backtomoods" to="mood"> <img id="arrow" src={require('./arrowleft.png')} /> </Link>
 			</div>
       
 				</div>
@@ -308,7 +327,7 @@ class Tea extends Component {
 					<h1>The perfect tea for you</h1>
 					<img id="logo" src={require('./cinnamon.png')} />
 						<div id="introtext">
-							<h1> Cinnamon </h1>
+							<h3> Cinnamon </h3>
 							<h2>Christmas has a tendency to bring a very festive feeling to us all. 
 							If you want to keep the holiday spirit as high as possible, a cup of cinnamon tea can help you with that. 
 							Just the scent itself brings you a warm and joyful feeling that reminds you of Christmas.</h2>
@@ -318,7 +337,7 @@ class Tea extends Component {
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood"> All moods </Link>
+			   <Link id="backtomoods" to="mood"> <img id="arrow" src={require('./arrowleft.png')} /> </Link>
 			</div>
       
 				</div>
@@ -339,7 +358,7 @@ class Tea extends Component {
 					<h1>The perfect tea for you</h1>
 					<img id="logo" src={require('./Rooibos.png')} />
 						<div id="introtext">
-							<h1> Rooibos tea </h1>
+							<h3> Rooibos tea </h3>
 							<h2>Rooibos tea is naturally caffeine-free but it is still a full bodied tea with a really rich flavour. It does not have a calming nor
 							 a bracing effect which makes it suitable when you're feeling sad and just want something flavourful that can uplift your mood just a bit. </h2>
 						</div>
@@ -348,7 +367,7 @@ class Tea extends Component {
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood"> All moods </Link>
+			   <Link id="backtomoods" to="mood"> <img id="arrow" src={require('./arrowleft.png')} /> </Link>
 			</div>
       
 				</div>
@@ -370,7 +389,7 @@ class Tea extends Component {
 					<h1>The perfect tea for you</h1>
 					<img id="logo" src={require('./strawBerry.png')} />
 						<div id="introtext">
-							<h1>Berry teas</h1>
+							<h3>Berry teas</h3>
 							<h2>If you have the urge for something sweet, a berry-tea can fulfill your need. 
 							A berry-tea is sweet both in scent and taste and you can choose between lots of different berry-flavours that will give you the sweetness you are looking for.
 							</h2>
@@ -380,7 +399,7 @@ class Tea extends Component {
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood"> All moods </Link>
+			   <Link id="backtomoods" to="mood"> <img id="arrow" src={require('./arrowleft.png')} /> </Link>
 			</div>
       
 				</div>
@@ -402,7 +421,7 @@ class Tea extends Component {
 					<h1>The perfect tea for you</h1>
 					<img id="logo" src={require('./lavender.png')} />
 						<div id="introtext">
-							<h1> Lavender</h1>
+							<h3>Lavender</h3>
 							<h2>Lavender tea is the best tea to induce sleep. With its anxiolytic and relaxant properties, a cup of lavender tea before bedtime can help
 							 you get an undisturbed night of sleep and give you a refreshed feeling in the morning!</h2>
 						</div>
@@ -411,7 +430,7 @@ class Tea extends Component {
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood">All moods</Link>
+			   <Link id="backtomoods" to="mood"> <img id="arrow" src={require('./arrowleft.png')} /> </Link>
 			</div>
       
 				</div>
@@ -433,7 +452,7 @@ class Tea extends Component {
 					<h1>The perfect tea for you</h1>
 					<img id="logo" src={require('./BlackTea.png')} />
 						<div id="introtext">
-							<h1>Black tea</h1>
+							<h3>Black tea</h3>
 							<h2>The best tea to drink if you want to give yourself a real boost of energy is black tea. 
 							Black tea contains natural stimulants like caffeine which can help enhance your energy level and allows you to stay awake and alert throughout the day. 
 							</h2>
@@ -443,7 +462,7 @@ class Tea extends Component {
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood"> All moods </Link>
+			   <Link id="backtomoods" to="mood"> <img id="arrow" src={require('./arrowleft.png')} /> </Link>
 			</div>
       
 				</div>
@@ -461,12 +480,11 @@ class Tea extends Component {
 			<div id="home">
 				<div id="wrapper3"> 
 				<div id="wrappertop">
-					<div id= "infobox">i</div>
 				</div>
 					<h1>The perfect tea for you</h1>
 					<img id="logo" src={require('./GingerTea.png')} />
 						<div id="introtext">
-							<h1> Ginger tea</h1>
+							<h3> Ginger tea</h3>
 							<h2>Ginger is known for its medicinal effects and therefore drinking ginger tea can be a great help when you are not feeling well. 
 							It contains anti-inflammatory properties and provides a feeling of comfort and warmth, which can help boost up your wellbeing.</h2>
 						</div>
@@ -475,7 +493,7 @@ class Tea extends Component {
 			<div id="wrapperlow">
 				<p> </p>
 			<div id="button">
-			   <Link id="StartLink" to="mood">All moods</Link>
+			  <Link id="backtomoods" to="mood"> <img id="arrow" src={require('./arrowleft.png')} /> </Link>
 			</div>
       
 				</div>
